@@ -17,6 +17,9 @@ class Event(FileSystemEventHandler):
     def on_created(self, event):
         file , file_ext = os.path.splitext(event.src_path)
 
+        # change folder destinations in des variable
+        # to switch file locations
+        # or add file extensions in if statments 
         if(file_ext == '.txt'):
             des = newPath + "/txt/" + ntpath.basename(event.src_path)
             shutil.move(event.src_path, des)
